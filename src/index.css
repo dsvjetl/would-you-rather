@@ -1,0 +1,67 @@
+:root {
+  --blue: #a9c4f5;
+  --blue-deep: #7aa3ee;
+  --blue-ink: #2f4f8f;
+  --green: #b5f0c4;
+  --green-ink: #2e8a4d;
+  --pink: #f2a9a9;
+  --pink-ink: #b34a4a;
+  --yellow: #f5f0a0;
+  --paper: #ffffff;
+  --ink: #1e2a3a;
+  --outline: 2px;
+
+  --font-display: 'Fredoka', 'Arial Rounded MT Bold', 'Nunito', system-ui, sans-serif;
+  --font-body: 'Fredoka', 'Nunito', system-ui, sans-serif;
+
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.4;
+  color: var(--ink);
+  color-scheme: light;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: var(--blue);
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.35) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.35) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+}
+
+button:focus-visible {
+  outline: 3px solid var(--blue-ink);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
