@@ -26,3 +26,6 @@ dist-ssr
 # local preview builds
 .preview*
 Claude outputs/
+
+# API keys (never commit)
+.env

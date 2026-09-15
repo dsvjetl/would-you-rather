@@ -10,6 +10,7 @@ const PROMPT = `
 Smisli jedno smiješno pitanje tipa „bi li radije...”, npr. „Bi li radije uvijek bio ljepljiv ili imao zaštopan nos?”.
 Odgovori ISKLJUČIVO JSON objektom oblika {"a": "prva opcija", "b": "druga opcija"}.
 Opcije napiši kao kratke fraze bez „bi li radije” i bez navodnika, npr. {"a": "uvijek bio ljepljiv", "b": "imao zaštopan nos"}.
+Uvijek piši u muškom rodu i pazi na hrvatski pravopis!
 `;
 
 const parseQuestion = (raw: string): Pick<Question, 'optionA' | 'optionB'> => {
