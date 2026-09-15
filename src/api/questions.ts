@@ -11,7 +11,7 @@ Smisli jedno smiješno pitanje tipa „bi li radije...”, npr. „Bi li radije 
 Odgovori ISKLJUČIVO JSON objektom oblika {"a": "prva opcija", "b": "druga opcija"}.
 Opcije napiši kao kratke fraze bez „bi li radije” i bez navodnika, npr. {"a": "uvijek bio ljepljiv", "b": "imao zaštopan nos"}.
 Uvijek piši u muškom rodu i pazi na hrvatski pravopis!
-Pitanja moraju biti u prvom licu, naprimjer: 'zauvijek pjevao operu kad govoriš' ili 'zauvijek govorio samo citate iz filmova'.
+Pitanja moraju biti u drugom licu, naprimjer: 'zauvijek pjevao operu kad govoriš' ili 'zauvijek govorio samo citate iz filmova'.
 Sva pitanja moraju imati "zauvijek" riječ u sebi!
 `;
 
