@@ -3,8 +3,8 @@ import { apiFetch } from './client';
 // Requests go through the Vite dev proxy (see vite.config.ts), which injects the API key
 // server-side so it never ends up in the browser bundle.
 const GEMINI_BASE_URL = '/api/gemini/v1beta/models';
-// gemini-2.5-flash handles Croatian noticeably better than flash-lite; both are on the free tier.
-const MODEL = 'gemini-2.5-flash';
+// Google retired gemini-2.5-* for new users; 3.6-flash is the current free-tier model.
+const MODEL = 'gemini-3.6-flash';
 
 type GeminiResponse = {
   candidates?: Array<{
@@ -17,7 +17,14 @@ export const generateText = async (prompt: string, temperature = 1): Promise<str
     method: 'POST',
     body: JSON.stringify({
       contents: [{ parts: [{ text: prompt }] }],
-      generationConfig: { temperature },
+      generationConfig: {
+        temperature,
+        // Gemini 3.x "thinks" before answering by default, which adds seconds of latency for a
+        // two-line JSON answer. Minimal thinking keeps it fast; the prompt is simple enough.
+        thinkingConfig: { thinkingLevel: 'minimal' },
+        // Ask for raw JSON so the model skips markdown fences and extra prose.
+        responseMimeType: 'application/json',
+      },
     }),
   });
 
