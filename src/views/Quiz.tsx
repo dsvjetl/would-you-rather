@@ -46,9 +46,11 @@ const Quiz = () => {
         {question && !isLoading && (
           <>
             <QuestionCard question={question} choice={choice} onChoose={handleChoose} />
-            <PillButton onClick={handleNext} disabled={choice === null}>
-              {choice === null ? 'Odaberi jedno' : 'Sljedeće'}
-            </PillButton>
+            {choice === null ? (
+              <p className="quiz__hint">Odaberi jedno</p>
+            ) : (
+              <PillButton onClick={handleNext}>Sljedeće</PillButton>
+            )}
           </>
         )}
       </div>

@@ -1,28 +1,7 @@
 import type { Plugin, ProxyOptions } from 'vite';
 import react from '@vitejs/plugin-react';
 import { defineConfig, loadEnv } from 'vite';
-
-type LlmProvider = {
-  prefix: string;
-  target: string;
-  envVar: string;
-  authHeader: (key: string) => Record<string, string>;
-};
-
-const providers: LlmProvider[] = [
-  {
-    prefix: '/api/groq',
-    target: 'https://api.groq.com',
-    envVar: 'GROQ_API_KEY',
-    authHeader: (key) => ({ Authorization: `Bearer ${key}` }),
-  },
-  {
-    prefix: '/api/gemini',
-    target: 'https://generativelanguage.googleapis.com',
-    envVar: 'GEMINI_API_KEY',
-    authHeader: (key) => ({ 'x-goog-api-key': key }),
-  },
-];
+import { providers, type LlmProvider } from './llm-providers.ts';
 
 // Answers /api/<provider> requests with a clear 500 when the matching key is missing,
 // before they ever reach the proxy.

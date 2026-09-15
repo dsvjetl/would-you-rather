@@ -1,0 +1,13 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[functions]
+  directory = "netlify/functions"
+
+# SPA fallback. /api/* is handled by netlify/functions/llm.ts (its `config.path`),
+# which takes precedence over redirects.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
