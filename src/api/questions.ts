@@ -13,6 +13,7 @@ Opcije napiši kao kratke fraze bez „bi li radije” i bez navodnika, npr. {"a
 Uvijek piši u muškom rodu i pazi na hrvatski pravopis!
 Pitanja moraju biti u drugom licu, naprimjer: 'zauvijek pjevao operu kad govoriš' ili 'zauvijek govorio samo citate iz filmova'.
 Sva pitanja moraju imati "zauvijek" riječ u sebi!
+Svako pitanje mora biti drugačije!
 `;
 
 const parseQuestion = (raw: string): Pick<Question, 'optionA' | 'optionB'> => {
