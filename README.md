@@ -76,7 +76,7 @@ export default defineConfig([
 ## Running locally
 
 ```sh
-cp .env.example .env.local   # fill in GROQ_API_KEY (or GEMINI_API_KEY)
+cp .env.example .env.local   # fill in GEMINI_API_KEY (or GROQ_API_KEY)
 npm install
 npm run dev
 ```
@@ -88,5 +88,5 @@ The browser calls `/api/<provider>/...`; the Vite dev server proxies that upstre
 
 `netlify.toml` builds the app into `dist` and deploys `netlify/functions/llm.ts`, which handles `/api/*`
 in production the same way the dev proxy does. The only extra step is adding the API key on Netlify:
-**Site configuration → Environment variables → `GROQ_API_KEY`** (or `GEMINI_API_KEY` if `src/api/llm.ts`
-points at Gemini), then trigger a new deploy.
+**Site configuration → Environment variables → `GEMINI_API_KEY`** (or `GROQ_API_KEY` if `src/api/llm.ts`
+points at Groq), then trigger a new deploy.

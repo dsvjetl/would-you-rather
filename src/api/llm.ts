@@ -1,2 +1,2 @@
-// Single place to pick the LLM provider. Swap the import to './gemini' to go back to Gemini.
-export { generateText } from './groq';
+// Single place to pick the LLM provider. Swap the import to './groq' to go back to Groq.
+export { generateText } from './gemini';

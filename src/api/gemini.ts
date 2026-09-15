@@ -3,7 +3,8 @@ import { apiFetch } from './client';
 // Requests go through the Vite dev proxy (see vite.config.ts), which injects the API key
 // server-side so it never ends up in the browser bundle.
 const GEMINI_BASE_URL = '/api/gemini/v1beta/models';
-const MODEL = 'gemini-2.5-flash-lite';
+// gemini-2.5-flash handles Croatian noticeably better than flash-lite; both are on the free tier.
+const MODEL = 'gemini-2.5-flash';
 
 type GeminiResponse = {
   candidates?: Array<{
